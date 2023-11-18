@@ -1,0 +1,80 @@
+
+
+<!-- <div *ngIf="user"> -->
+    <div>
+    <form [formGroup]="registerForm"  aria-autocomplete="new-password">
+    <h1>Customer Registration</h1>
+    <div class="form-control">
+        <label for="email">FirstName</label>
+        <input formControlName="firstName" id="email" autocomplete="new-password" type="text" placeholder="First Name">
+    </div>
+
+    <div class="form-control">
+        <label for="email">LastName</label>
+        <input formControlName="lastName" id="email" autocomplete="new-password" type="text" placeholder="Last Name">
+    </div>
+
+
+    <div class="form-control">
+        <label for="email">Phone Number</label>
+        <input formControlName="phoneNumber" id="email" autocomplete="new-password" type="number" placeholder="Phone Number">
+    </div>
+
+    <div class="form-control">
+        <label for="email">Email</label>
+        <input formControlName="email" id="email" autocomplete="new-password" type="email" placeholder="Email">
+    </div>
+
+    <div class="form-control">
+        <label for="password">Create Password</label>
+        <input formControlName="password" id="password" autocomplete="new-password" type="password" placeholder="Password">
+    </div>
+
+    <div class="form-control">
+        <label for="password">Confirm Password</label>
+        <input formControlName="password" id="password" autocomplete="new-password" type="password" placeholder="Confirm Password">
+    </div>
+    <button  (click)="register()" type="submit">Register</button>
+    <!-- <p>Register as a vendor</p> -->
+    </form>
+    </div>
+
+
+<!-- </div> -->
+
+<!-- <div *ngIf="!user">
+    <form [formGroup]="registerForm"  aria-autocomplete="new-password">
+    <h1>Vendor Registration</h1>
+    <div class="form-control">
+        <label for="email">FirstName</label>
+        <input formControlName="firstName" id="email" autocomplete="new-password" type="text" placeholder="First Name">
+    </div>
+
+    <div class="form-control">
+        <label for="email">LastName</label>
+        <input formControlName="lastName" id="email" autocomplete="new-password" type="text" placeholder="Last Name">
+    </div>
+
+
+    <div class="form-control">
+        <label for="email">Phone Number</label>
+        <input formControlName="phoneNumber" id="email" autocomplete="new-password" type="number" placeholder="Phone Number">
+    </div>
+
+    <div class="form-control">
+        <label for="email">Email</label>
+        <input formControlName="email" id="email" autocomplete="new-password" type="email" placeholder="Email">
+    </div>
+
+    <div class="form-control">
+        <label for="password">Create Password</label>
+        <input formControlName="password" id="password" autocomplete="new-password" type="password" placeholder="Password">
+    </div>
+
+    <div class="form-control">
+        <label for="password">Confirm Password</label>
+        <input formControlName="password" id="password" autocomplete="new-password" type="password" placeholder="Confirm Password">
+    </div>
+    <button  (click)="register()" type="submit">Register</button>
+    </form>
+</div> -->
