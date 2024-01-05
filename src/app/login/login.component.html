@@ -1,14 +1,71 @@
-<form [formGroup]="loginForm" (submit)="login()" aria-autocomplete="new-password">
+<!-- <form [formGroup]="loginForm" (submit)="login()" aria-autocomplete="new-password"> -->
+<form [formGroup]="loginForm" aria-autocomplete="new-password">
     <h1>Customer Login</h1>
     <div class="form-control">
         <label for="email">Email</label>
-        <input formControlName="email" id="email" autocomplete="new-password" type="email">
+        <input formControlName="email" id="email"  [(ngModel)]="loginUser.email" autocomplete="new-password" type="email">
     </div>
 
     <div class="form-control">
         <label for="password">Password</label>
-        <input formControlName="password" id="password" autocomplete="new-password" type="email">
+        <input formControlName="password" id="password" [(ngModel)]="loginUser.password" autocomplete="new-password" type="email">
     </div>
-<button type="submit">Login</button>
+<button type="submit" (click)="login()">Login</button>
 </form>
 
+
+<!-- <h2>User List</h2>
+<hr>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of users; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.password}}</td>
+            <td>
+                <a [routerLink]="['/home', item._id]" class="btn btn-success">Edit</a> &nbsp;
+                 He used javascript:void(0) to disable the anchor tag before any behavior 
+                <a href="javascript:void(0);" class="btn btn-danger" (click)="deleteUser(item._id)">Delete</a>
+            </td>
+        </tr>
+    </tbody> -->
+
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of users; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.contact}}</td>
+            <td>{{item.address}}</td>
+            <td>
+                <a [routerLink]="['/home', item._id]" class="btn btn-success">Edit</a> &nbsp; -->
+                <!--He used javascript:void(0) to disable the anchor tag before any behavior-->
+                <!-- <a href="javascript:void(0);" class="btn btn-danger" (click)="deleteUser(item._id)">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table> -->

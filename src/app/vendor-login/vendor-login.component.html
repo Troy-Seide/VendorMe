@@ -1,0 +1,13 @@
+<form [formGroup]="loginForm"  aria-autocomplete="new-password">
+    <h1>Vendor Login</h1>
+    <div class="form-control">
+        <label for="email">Vendor Email</label>
+        <input formControlName="email" id="email" [(ngModel)]="loginVendor.email" autocomplete="new-password" type="email">
+    </div>
+
+    <div class="form-control">
+        <label for="password">Password</label>
+        <input formControlName="password" id="password" [(ngModel)]="loginVendor.password" autocomplete="new-password" type="email">
+    </div>
+<button (click)="login()" type="submit">Login</button>
+</form>

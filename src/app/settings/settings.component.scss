@@ -1,0 +1,87 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 200px;  */
+    margin-top: 25px;
+    margin-bottom: 0px;
+    /* height: 750px; */
+    /* border: 3px solid green;  */
+}
+@mixin focus {
+    &:focus{
+        outline-offset: 2px;
+        outline: 2px solid #07c;
+    }
+}
+
+form {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 16px 16px 24px;
+    box-shadow: 0 2px 32px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+    h1{
+        margin-top: 0;
+        color: #555;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+.form-control {
+    margin-bottom: 16px;
+    input,
+    label{
+        display: block;
+    }
+
+    .label{
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+
+    input{
+        padding: 8px;
+        height: 35px;
+        border-radius: 4px;
+        width: 100%;
+        border: 2px solid #ccc;
+        background-color: white;
+
+        @include focus;
+    }
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 1.2rem;
+    @include focus;
+}
+
+.question{
+    text-align: center;
+    margin-top: 70px;
+    font-size: large;
+}
+
+.settings{
+    display:inline-block;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 25px;
+    transform: translateX(75%);
+    width: 40%;
+    border: 2px solid #ccc;
+    background-color: white;
+}
+.inside{
+
+}

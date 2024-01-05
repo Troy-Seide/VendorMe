@@ -1,0 +1,206 @@
+<!-- <h2 class="center">Edit Account</h2> -->
+<h1 class="center">Account Settings</h1>
+<hr>
+<!-- <h2>User List</h2> -->
+<div *ngIf="checkUser" class="settings">
+    <div>
+        <ul>
+            <li><b>First Name:</b> {{loggedInUser.firstName}}</li>
+            <li><b>Last Name: </b> {{loggedInUser.lastName}}</li>
+            <li><b>Contact:</b> {{loggedInUser.phone}}</li>
+            <li><b>Product Needs:</b> {{loggedInUser.description}}</li>
+            <li><b>Email:</b> {{loggedInUser.email}}</li>
+            <li><b>Password:</b> {{loggedInUser.password}}</li>
+        </ul>
+    </div>
+    <div class="inside">
+        <a [routerLink]="['/edit', loggedInUser._id]" class="btn btn-success">Edit</a> &nbsp;
+        <a href="javascript:void(0);" class="btn btn-danger" (click)="deleteUser(loggedInUser._id)">Delete</a>
+    </div>
+</div>
+
+<div *ngIf="checkVendor" class="settings">
+<ul>
+    <li><b>Name:</b> {{loggedInVendor.name}}</li>
+    <li><b>Description: </b> {{loggedInVendor.description}}</li>
+    <li><b>Phone:</b> {{loggedInVendor.phone}}</li>
+    <li><b>Shipping Location:</b> {{loggedInVendor.shipping}}</li>
+    <li><b>Email:</b> {{loggedInVendor.email}}</li>
+    <li><b>Password:</b> {{loggedInVendor.password}}</li>
+</ul>
+<a [routerLink]="['/edit', loggedInVendor._id]" class="btn btn-success">Edit</a> &nbsp;
+<a href="javascript:void(0);" class="btn btn-danger" (click)="deleteUser(loggedInVendor._id)">Delete</a>
+</div>
+
+<!-- <button (click)="findUser()"></button> -->
+<!-- <hr>
+<div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of users; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.password}}</td>
+            <td>
+                <a [routerLink]="['/home', item._id]" class="btn btn-success">Edit</a> &nbsp;
+                <a (click)="find()" class="btn btn-success">Other</a> &nbsp;
+                 He used javascript:void(0) to disable the anchor tag before any behavior
+                <a href="javascript:void(0);" class="btn btn-danger" (click)="deleteUser(item._id)">Delete</a>
+            </td>
+        </tr>
+</tbody>
+</table>
+</div> -->
+
+
+<!-- <div class="col-sm-5">
+<form #form="ngForm" (ngSubmit)="saveData(form)">
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="Name" #Name="ngModel" [(ngModel)]="user.firstName" required class="form-control"/>
+        <div *ngIf="Name.errors && form.submitted" class="text-danger">
+            Please Enter First Name 
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" name="Name" #Name="ngModel" [(ngModel)]="user.lastName" required class="form-control"/>
+        <div *ngIf="Name.errors && form.submitted" class="text-danger">
+            Please Enter Last Name 
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <textarea name="Address" #Address="ngModel" [(ngModel)]="user.email"
+        required class="form-control"></textarea>
+        <div *ngIf="Address.errors && form.submitted" class="text-danger">
+            Please Enter Email
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Contact</label>
+        <input type="text" name="Contact" #Contact="ngModel" [(ngModel)]="user.phone" required class="form-control"/>
+        <div *ngIf="Contact.errors && form.submitted" class="text-danger">
+            Please Enter Contact
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="text" name="Name" #Name="ngModel" [(ngModel)]="user.password" required class="form-control"/>
+        <div *ngIf="Name.errors && form.submitted" class="text-danger">
+            Please Enter Password 
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Save" class="btn btn-primary"/>
+    </div>
+</form> -->
+
+<!--Here-->
+<!-- <div class="form-contol" *ngIf="checkUser"> -->
+    <!-- <form #form="ngForm" (ngSubmit)="saveData(form)"> -->
+    <!-- <form #form="ngForm" (ngSubmit)="saveData(form)">
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="First Name" #FName="ngModel" [(ngModel)]="user.firstName" required class="form-control"/>
+            <div *ngIf="FName.errors && form.submitted" class="text-danger">
+                Please Enter First Name 
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="Last Name" #LName="ngModel" [(ngModel)]="user.lastName" required class="form-control"/>
+            <div *ngIf="LName.errors && form.submitted" class="text-danger">
+                Please Enter Last Name 
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Contact</label>
+            <input type="text" name="Phone Number" #Contact="ngModel" [(ngModel)]="user.phone" required class="form-control"/>
+            <div *ngIf="Contact.errors && form.submitted" class="text-danger">
+                Please Enter Phone Number
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <textarea name="Email" #Email="ngModel" [(ngModel)]="user.email"
+            required class="form-control"></textarea>
+            <div *ngIf="Email.errors && form.submitted" class="text-danger">
+                Please Enter Email
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <textarea name="Password" #Password="ngModel" [(ngModel)]="user.password"
+            required class="form-control"></textarea>
+            <div *ngIf="Password.errors && form.submitted" class="text-danger">
+                Please Enter Password
+            </div>
+        </div>
+        
+        <div>
+            <input type="submit" value="Save" class="btn btn-primary"/>
+        </div>
+    </form>
+</div> -->
+
+<!-- <div class="form-contol" *ngIf="checkVendor"> -->
+    <!-- <form #form="ngForm" (ngSubmit)="saveData(form)"> -->
+    <!-- <form #form="ngForm">
+        <div class="form-group">
+            <label>Vendor Name</label>
+            <input type="text" name="First Name" #FName="ngModel" [(ngModel)]="vendor.name" required class="form-control"/>
+            <div *ngIf="FName.errors && form.submitted" class="text-danger">
+                Please Enter Vendor Name 
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Vendor Description</label>
+            <input type="text" name="Last Name" #LName="ngModel" [(ngModel)]="vendor.description" required class="form-control"/>
+            <div *ngIf="LName.errors && form.submitted" class="text-danger">
+                Please Enter Vendor Product Description
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Contact</label>
+            <input type="text" name="Phone Number" #Contact="ngModel" [(ngModel)]="vendor.phone" required class="form-control"/>
+            <div *ngIf="Contact.errors && form.submitted" class="text-danger">
+                Please Enter Vendor Contact
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <textarea name="Email" #Email="ngModel" [(ngModel)]="vendor.email"
+            required class="form-control"></textarea>
+            <div *ngIf="Email.errors && form.submitted" class="text-danger">
+                Please Vendor Email
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <textarea name="Password" #Password="ngModel" [(ngModel)]="vendor.password"
+            required class="form-control"></textarea>
+            <div *ngIf="Password.errors && form.submitted" class="text-danger">
+                Please Enter Password
+            </div>
+        </div>
+        
+        <div>
+            <input (click)="saveData(form)" type="submit" value="Save" class="btn btn-primary"/>
+        </div>
+    </form>
+</div> -->

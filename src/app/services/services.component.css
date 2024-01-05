@@ -1,0 +1,28 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 200px;  */
+    margin-top: 35px;
+    margin-bottom: 0px;
+    /* height: 750px; */
+    /* border: 3px solid green;  */
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-top: 40px;
+}
+
+/* #bar {
+    border-radius: 20px; 
+    
+} */
+input {
+    text-align: center;
+    width: 35%;
+    border-radius: 60px;
+    padding: 5px;
+  }

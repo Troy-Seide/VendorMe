@@ -1,0 +1,103 @@
+<div *ngIf="checkUser">
+    <form #form="ngForm" (ngSubmit)="saveData(form)">
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="FName" #FName="ngModel" [(ngModel)]="user.firstName" required class="form-control"/>
+        <div *ngIf="FName.errors && form.submitted" class="text-danger">
+            Please Enter First Name 
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" name="LName" #LName="ngModel" [(ngModel)]="user.lastName" required class="form-control"/>
+        <div *ngIf="LName.errors && form.submitted" class="text-danger">
+            Please Enter Last Name 
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <textarea name="Email" #Email="ngModel" [(ngModel)]="user.email"
+        required class="form-control"></textarea>
+        <div *ngIf="Email.errors && form.submitted" class="text-danger">
+            Please Enter Email
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Contact</label>
+        <input type="text" name="Contact" #Contact="ngModel" [(ngModel)]="user.phone" required class="form-control"/>
+        <div *ngIf="Contact.errors && form.submitted" class="text-danger">
+            Please Enter Contact
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Product Needs</label>
+        <textarea name="Product" #Product="ngModel" [(ngModel)]="user.description"
+        required class="form-control"></textarea>
+        <div *ngIf="Product.errors && form.submitted" class="text-danger">
+            Please Product Needs
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="text" name="Password" #Password="ngModel" [(ngModel)]="user.password" required class="form-control"/>
+        <div *ngIf="Password.errors && form.submitted" class="text-danger">
+            Please Enter Password 
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Save" class="btn btn-primary"/>
+    </div>
+    </form> 
+</div>
+
+<div *ngIf="checkVendor">
+    <form #form2="ngForm" (ngSubmit)="saveData(form2)">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="Name" #Name="ngModel" [(ngModel)]="vendor.name" required class="form-control"/>
+        <div *ngIf="Name.errors && form.submitted" class="text-danger">
+            Please Enter Name 
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" name="Description" #Description="ngModel" [(ngModel)]="vendor.description" required class="form-control"/>
+        <div *ngIf="Description.errors && form.submitted" class="text-danger">
+            Please Enter Description
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <textarea name="Email" #Email="ngModel" [(ngModel)]="vendor.email"
+        required class="form-control"></textarea>
+        <div *ngIf="Email.errors && form.submitted" class="text-danger">
+            Please Enter Email
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Contact</label>
+        <input type="text" name="Contact" #Contact="ngModel" [(ngModel)]="vendor.phone" required class="form-control"/>
+        <div *ngIf="Contact.errors && form.submitted" class="text-danger">
+            Please Enter Contact
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Shipping Location</label>
+        <textarea name="Shipping" #Shipping="ngModel" [(ngModel)]="vendor.shipping"
+        required class="form-control"></textarea>
+        <div *ngIf="Shipping.errors && form.submitted" class="text-danger">
+            Please Enter Shipping Location
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="text" name="Password" #Password="ngModel" [(ngModel)]="vendor.password" required class="form-control"/>
+        <div *ngIf="Password.errors && form.submitted" class="text-danger">
+            Please Enter Password 
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Save" class="btn btn-primary"/>
+    </div>
+    </form> 
+</div>

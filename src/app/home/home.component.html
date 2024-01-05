@@ -1,8 +1,92 @@
 <!-- <h1>VendorMe</h1> -->
 <!-- <p>Connect to a vendor to grow your business</p> -->
+<div class="center">
+    <!-- <button a href="#!" routerLink="/login" routerLinkActive="active">Customer Login</button> -->
+    <!-- <button a href="#!" routerLink="/vendorLogin" routerLinkActive="active">Vendor Login</button> -->
+    <a mat-raised-button color="primary" routerLink="/login" routerLinkActive="active">Customer Login</a> &nbsp;
+    <a mat-raised-button color="primary" routerLink="/vendorLogin" routerLinkActive="active">Vendor Login</a>
+</div>
 
-<button a href="#!" routerLink="/login" routerLinkActive="active">Customer Login</button>
-<button>Vendor Login</button>
+
+<!--What I got from mean stack video-->
+<!-- <h2 [hidden]="!(user._id==undefined)">Create User</h2>
+<h2 [hidden]="!(user._id!=undefined)">Edit User</h2>
+<hr> -->
+<!--<div class="col-sm-5">
+    <form #form="ngForm" (ngSubmit)="saveData(form)">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="Name" #Name="ngModel" [(ngModel)]="user.name" required class="form-control"/>
+            <div *ngIf="Name.errors && form.submitted" class="text-danger">
+                Please Enter Name 
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <textarea name="Address" #Address="ngModel" [(ngModel)]="user.address"
+            required class="form-control"></textarea>
+            <div *ngIf="Address.errors && form.submitted" class="text-danger">
+                Please Enter Address
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Contact</label>
+            <input type="text" name="Contact" #Contact="ngModel" [(ngModel)]="user.contact" required class="form-control"/>
+            <div *ngIf="Contact.errors && form.submitted" class="text-danger">
+                Please Enter Contact
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="Save" class="btn btn-primary"/>
+        </div>
+    </form>
+</div>-->
+
+<!--You just did this-->
+<!-- <div class="col-sm-5">
+<form #form="ngForm" (ngSubmit)="saveData(form)">
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="Name" #Name="ngModel" [(ngModel)]="user.firstName" required class="form-control"/>
+        <div *ngIf="Name.errors && form.submitted" class="text-danger">
+            Please Enter First Name 
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" name="Name" #Name="ngModel" [(ngModel)]="user.lastName" required class="form-control"/>
+        <div *ngIf="Name.errors && form.submitted" class="text-danger">
+            Please Enter Last Name 
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <textarea name="Address" #Address="ngModel" [(ngModel)]="user.email"
+        required class="form-control"></textarea>
+        <div *ngIf="Address.errors && form.submitted" class="text-danger">
+            Please Enter Email
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Contact</label>
+        <input type="text" name="Contact" #Contact="ngModel" [(ngModel)]="user.phone" required class="form-control"/>
+        <div *ngIf="Contact.errors && form.submitted" class="text-danger">
+            Please Enter Contact
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="text" name="Name" #Name="ngModel" [(ngModel)]="user.password" required class="form-control"/>
+        <div *ngIf="Name.errors && form.submitted" class="text-danger">
+            Please Enter Password 
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Save" class="btn btn-primary"/>
+    </div>
+</form>
+</div>-->
+
 <!-- <button a href="#!" routerLink="/login" routerLinkActive="active">Vendor Login</button> -->
 <!-- <div><a href="#!" routerLink="/login" routerLinkActive="active">Login</a></div> -->
 <!-- <div class="vertical-center pr-10 mt-10">

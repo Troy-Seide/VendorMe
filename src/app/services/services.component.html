@@ -1,1 +1,72 @@
-<p>services works!</p>
+<div class="search">
+    <input type="text" id="bar" placeholder="search" [(ngModel)]="words">
+    <!-- <button id="bar" (click)="search()">search</button> -->
+</div>
+
+<div *ngIf="checkUser">
+<h2 class="center">Vendor List</h2>
+<hr>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Shipping Location</th>
+            <!-- <th>Password</th> -->
+            <!-- <th>Actions</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of vendors |customeFilterPipe:words; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.shipping}}</td>
+            <!-- <td>{{item.password}}</td> -->
+            <!-- <td> -->
+                <!-- <a [routerLink]="['/home', item._id]" class="btn btn-success">Edit</a> &nbsp; -->
+                <!-- He used javascript:void(0) to disable the anchor tag before any behavior -->
+                <!-- <a href="javascript:void(0);" class="btn btn-danger" (click)="deleteUser(item._id)">Delete</a> -->
+            <!-- </td> -->
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div *ngIf="checkVendor">
+<h2 class="center">Customer List</h2>
+<hr>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <!-- <th>Description</th> -->
+            <th>Contact</th>
+            <th>Email</th>
+            <!-- <th>Password</th> -->
+            <th>Product Needs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of users |customeFilterPipe:words; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.firstName}} {{item.lastName}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.description}}</td>
+                <!-- <a [routerLink]="['/home', item._id]" class="btn btn-success">Edit</a> &nbsp;
+                He used javascript:void(0) to disable the anchor tag before any behavior 
+                <a href="javascript:void(0);" class="btn btn-danger" (click)="deleteUser(item._id)">Delete</a> -->
+            <!-- </td> -->
+        </tr>
+    </tbody>
+    </table>
+</div>
