@@ -1,12 +1,15 @@
 <!-- <h1>VendorMe</h1> -->
 <!-- <p>Connect to a vendor to grow your business</p> -->
-<div class="center">
+<div class="center" *ngIf="!helperService.loggedIn()">
     <!-- <button a href="#!" routerLink="/login" routerLinkActive="active">Customer Login</button> -->
     <!-- <button a href="#!" routerLink="/vendorLogin" routerLinkActive="active">Vendor Login</button> -->
     <a mat-raised-button color="primary" routerLink="/login" routerLinkActive="active">Customer Login</a> &nbsp;
     <a mat-raised-button color="primary" routerLink="/vendorLogin" routerLinkActive="active">Vendor Login</a>
 </div>
 
+<div class="center" *ngIf="helperService.loggedIn()">
+    <h1>Welcome to VendorMe</h1>
+</div>
 
 <!--What I got from mean stack video-->
 <!-- <h2 [hidden]="!(user._id==undefined)">Create User</h2>

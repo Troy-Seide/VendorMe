@@ -19,8 +19,9 @@ export class HomeComponent implements OnInit{
   errMessage:String;
 
   user: User;
+  checkLogin;
 
-  constructor(private helperService: HelperService, private router: Router, private route: ActivatedRoute){
+  constructor(public helperService: HelperService, private router: Router, private route: ActivatedRoute){
     this.user = new User();
   }
 
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit{
     //   username: new FormControl('', Validators.required),
     //   password: new FormControl('', Validators.required)
     // })
+    this.checkLogin = this.helperService.loggedIn();
     //Here we subscribe for the parameters 
     this.route.params.subscribe(params => {
       let id = params.id; //here we get the parameter name we're having, so in our case it is the 'home/:edit' in the app-routing.module.ts file

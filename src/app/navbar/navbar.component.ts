@@ -15,4 +15,9 @@ export class NavbarComponent {
 
     // }
   }
+  listingCheck(){
+    if(!this.helperService.loggedIn()){
+      alert('Login or Register to check listings.');
+    }
+  }
 }
