@@ -37,6 +37,14 @@
         </tr>
     </tbody>
 </table>
+<div class="info-container">
+    <div *ngFor="let item of vendors" class="info-box">
+        <h2>Name: {{item.name}}</h2>
+        <h3><b>Products:</b> {{item.description}}</h3>
+        <h3><b>Email:</b> {{item.email}}</h3>
+        <h3><b>Shipping:</b> {{item.shipping}}</h3>
+    </div>
+    </div>
 </div>
 
 <div *ngIf="checkVendor">

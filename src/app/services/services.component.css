@@ -3,10 +3,11 @@
     justify-content: center;
     align-items: center;
     /* height: 200px;  */
+    /* Here */
     margin-top: 35px;
     margin-bottom: 0px;
-    /* height: 750px; */
-    /* border: 3px solid green;  */
+    /* height: 750px;
+    border: 3px solid green;  */
 }
 
 .search {
@@ -25,4 +26,41 @@ input {
     width: 35%;
     border-radius: 60px;
     padding: 5px;
+  }
+
+  .test {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    height: 200px;
+    border: 2px solid;
+    background-color: #29394b;
+    padding: 10px;
+    color: black;
+    margin: 0 12px 12px 0;
+  }
+
+  h2 {
+    font-size: 1.6em;
+    flex: 1;
+  }
+  .tools {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+.info-box {
+    border: 2px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px;
+    width: calc(33.33% - 20px); /* Adjust width based on the desired number of boxes per row */
+    box-sizing: border-box;
+  }
+
+.info-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next line */
   }
